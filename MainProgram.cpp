@@ -32,8 +32,9 @@ public:
     // Must enforce the invariant.
     // Throw std::invalid_argument if value < -273.15
     explicit Temperature(int celsius) {
-        if (celsius<-273.15)
+        if (celsius<-273.15){
             throw invalid_argument("Temperature cannot be below absolute zero(-273.15)");
+        }
     celsius_ = celsius;
     }
      
@@ -136,7 +137,7 @@ public:
     void transfer(BankAccount& other, double amount) {
         // TODO: Implement using withdraw() and deposit()
         if(amount <= 0){
-            throw runtime_error("transfer amount must be positive");
+            throw invalid_argument("transfer amount must be positive");
         }
         withdraw(amount);
         other.deposit(amount);
