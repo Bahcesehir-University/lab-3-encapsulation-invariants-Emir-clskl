@@ -31,7 +31,7 @@ public:
     // Constructor: initialize with a Celsius value.
     // Must enforce the invariant.
     // Throw std::invalid_argument if value < -273.15
-    explicit Temperature(int celsius) {
+    explicit Temperature(double celsius) {
         if (celsius<-273.15){
             throw invalid_argument("Temperature cannot be below absolute zero(-273.15)");
         }
